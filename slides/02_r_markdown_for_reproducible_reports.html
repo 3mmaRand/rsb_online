@@ -1,49 +1,32 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>R Markdown for Reproducible Reports</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Emma Rand" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="..\css_files\emma.css" type="text/css" />
+    <link rel="stylesheet" href="..\css_files\emma-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# R Markdown for Reproducible Reports
+## Royal Society of Biology one-day course.
+### Emma Rand
+### University of York, UK
+
 ---
-title: "R Markdown for Reproducible Reports"
-subtitle: "Royal Society of Biology one-day course."
-author: "Emma Rand"
-institute: "University of York, UK"
-output:
-  xaringan::moon_reader:
-    css: [default, ../css_files/emma.css, ../css_files/emma-fonts.css]
-    lib_dir: libs
-    seal: true
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, 
-                      message = FALSE,	
-                      warning = FALSE,
-                      fig.width=4, 
-                      fig.height=4, 
-                      fig.retina=3)
-options(htmltools.dir.version = FALSE)
-```
 
 
-```{r packages, include=FALSE}
-library(RefManageR)
-library(kableExtra)
-library(tidyverse)
-library(viridisLite)
-```
 
 
-```{r, load-refs, include=FALSE, cache=FALSE}
-BibOptions(check.entries = FALSE,
-           bib.style = "authoryear",
-           cite.style = "authoryear",
-           style = "markdown",
-           hyperlink = TRUE,
-           dashed = FALSE,
-           longnamesfirst = FALSE,
-           max.names = 2)
-myBib <- ReadBib("../refs.bib", check = FALSE)
-```
+
+
+
+
+
 
 class: inverse
 
@@ -69,8 +52,8 @@ The successful student will be able to:
 # Goal!
 
 By the end of this session you'll be able to do something like this:
-<!-- standard markdown report in pdf, word or html -->
-<!-- include a table, inline code, a figure,  -->
+&lt;!-- standard markdown report in pdf, word or html --&gt;
+&lt;!-- include a table, inline code, a figure,  --&gt;
 
 ## demo.....
 
@@ -105,7 +88,7 @@ background-size: 180px
 
 # R Markdown for reports
 
-The brilliance of R Markdown `r Cite(myBib, "markdown1")` is that you can use a **single R Markdown file** to:
+The brilliance of R Markdown &lt;a name=cite-markdown1&gt;&lt;/a&gt;([Allaire Xie, et al., 2019a](#bib-markdown1)) is that you can use a **single R Markdown file** to:
 
 * save and execute code  
 
@@ -122,7 +105,7 @@ The brilliance of R Markdown `r Cite(myBib, "markdown1")` is that you can use a 
 
 This is a time-efficient and reproducible way to write!
 
-## `r emo::ji("sunglasses")`
+## 😎
 
 
 
@@ -155,11 +138,11 @@ You are going to work with some made-up data on the myoglobin content in the ske
 
 --
 
-`r emo::ji("clapper")` Create a new project called 'seals'
+🎬 Create a new project called 'seals'
 
 --
 
-`r emo::ji("clapper")` Inside 'seals', make folders called 'raw_data' and
+🎬 Inside 'seals', make folders called 'raw_data' and
 'processed_data'
 
 --
@@ -169,14 +152,14 @@ R can cope with them....  but they can often confuse humans!
 
 --
 
-`r emo::ji("clapper")` Save a copy of [seal.txt](../seals/raw_data/seal.txt) to the 'raw_data' folder
+🎬 Save a copy of [seal.txt](../seals/raw_data/seal.txt) to the 'raw_data' folder
 
 ---
 # R Markdown for reports
 
 Live demo
 
-`r emo::ji("clapper")` Just watch for a while....
+🎬 Just watch for a while....
 
 ---
 # R Markdown for reports
@@ -189,7 +172,7 @@ Key points from the demo
 * code chunk options control whether the code and its output end up in your 'knitted' document  
 * comments   
   * in a code chunk the \# is still used for comments  
-  * in the text a comment is written like this  <!\-\- a comment \-\->
+  * in the text a comment is written like this  &lt;!\-\- a comment \-\-&gt;
   * but use Ctrl+Shift+C  
 * \# in the text indicate headings  
 
@@ -199,15 +182,15 @@ Key points from the demo
 
 Your own R markdown file
 
-`r emo::ji("clapper")` File | New File | R Markdown
+🎬 File | New File | R Markdown
 
 --
 
-`r emo::ji("clapper")` Delete everything except the YAML header the first code chunk
+🎬 Delete everything except the YAML header the first code chunk
 
 --
 
-`r emo::ji("clapper")` Add your name, and a title 
+🎬 Add your name, and a title 
 
 You could copy and paste a title from [paper.html](../seals/paper.html)
 
@@ -215,7 +198,7 @@ You could copy and paste a title from [paper.html](../seals/paper.html)
 
 # YAML
 
-`r emo::ji("clapper")` I also recommend using the `bookdown` package `r Cite(myBib, "bookdown")` output types which handle cross referencing well.
+🎬 I also recommend using the `bookdown` package &lt;a name=cite-bookdown&gt;&lt;/a&gt;([Xie, 2016](#bib-bookdown)) output types which handle cross referencing well.
 
 ```
 ---
@@ -233,11 +216,11 @@ bibliography: reference.bib
 ---
 # Default code behaviour
 
-`r emo::ji("clapper")` Set some **default** code chunk options. I recommend these:
+🎬 Set some **default** code chunk options. I recommend these:
 
 
 ````
-```{r setup, include=FALSE}`r ''`
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, 
                       warning = FALSE,
                       message = FALSE,
@@ -258,11 +241,11 @@ Packages
 
 The first two code chunks are usually for the default code chunk options (which I tend to call `setup`) and for package loading. 
 
-`r emo::ji("clapper")` Use Insert | R to add a code chunk:
+🎬 Use Insert | R to add a code chunk:
 
 .pull-left[
 ````
-```{r packages}`r ''`
+```{r packages}
 library(tidyverse)
 
 ```
@@ -281,7 +264,7 @@ References and citations can be added by creating a .bib file containing referen
 
 --
 
-`r emo::ji("clapper")` Add `bibliography: mybibfile.bib` to the YAML header.<sup>1</sup>
+🎬 Add `bibliography: mybibfile.bib` to the YAML header.&lt;sup&gt;1&lt;/sup&gt;
 .footnote[
 1. There are other ways of including references such as using `RefManageR` package which is what I am using in these slides.
 
@@ -292,11 +275,11 @@ References and citations can be added by creating a .bib file containing referen
 
 Make a .bib file
 
-`r emo::ji("clapper")` Do File | New file | Text file
+🎬 Do File | New file | Text file
 
-`r emo::ji("clapper")` Save as `mybibfile.bib`
+🎬 Save as `mybibfile.bib`
 
-`r emo::ji("clapper")` Add BibTeX entries
+🎬 Add BibTeX entries
 
 `citation("package")` in the console will give packages references in BibTeX format.  
 
@@ -309,8 +292,8 @@ BibTeX format is also available through most referencing software (e.g., PaperPi
 # References
 
 Citations are added using:
-  *  blah blah blah `[@xaringan]` for blah blah blah `r Cite(myBib, "xaringan")`.    
-  *  Xie `[-@xaringan]` said blah blah blah for `r Cite(myBib, "xaringan",textual = TRUE)` said blah blah blah.  
+  *  blah blah blah `[@xaringan]` for blah blah blah &lt;a name=cite-xaringan&gt;&lt;/a&gt;([Xie, 2019](#bib-xaringan)).    
+  *  Xie `[-@xaringan]` said blah blah blah for [Xie (2019)](#bib-xaringan) said blah blah blah.  
 
 --
 
@@ -326,7 +309,7 @@ Every citation used results in the reference being added to a list at the bottom
 
 Introduction
 
-`r emo::ji("clapper")` Add a header for the Introduction and text - again you could copy and paste. 
+🎬 Add a header for the Introduction and text - again you could copy and paste. 
 
 ```
 # Introduction
@@ -339,22 +322,22 @@ myoglobin differed between  species.
 ---
 # Your turn
 
-`r emo::ji("clapper")` Include at least one reference in your introduction, such as this one: https://doi.org/https://doi.org/10.1016/S1095-6433(00)00182-3.
+🎬 Include at least one reference in your introduction, such as this one: https://doi.org/https://doi.org/10.1016/S1095-6433(00)00182-3.
 
 --
 
-`r emo::ji("clapper")` Save your file.
+🎬 Save your file.
 
 
 ---
 # Your turn
 
-`r emo::ji("clapper")` Add a heading for the Methods section including at least one reference to R or packages.
+🎬 Add a heading for the Methods section including at least one reference to R or packages.
 
 
 --
 
-`r emo::ji("clapper")` Hit Knit! `r emo::ji("knit")`
+🎬 Hit Knit! 🧶
 
 This should render as something like:
 
@@ -363,14 +346,14 @@ We used R (R Core Team 2019) with tidyverse packages (Wickham 2017) for all anal
 ---
 # Add a code chunk
 
-`r emo::ji("clapper")` Insert a code chunk for importing the data
+🎬 Insert a code chunk for importing the data
 
 
 ````
-```{r import}`r ''`
+```{r import}
 # the data are organised in to three 
 # columns, one for each species. 
-seal <- read.table("raw_data/seal.txt", header = TRUE)
+seal &lt;- read.table("raw_data/seal.txt", header = TRUE)
 ```
 ````
 --
@@ -381,13 +364,13 @@ Notice than you can, and should, comment your code.
 
 You can run the code interactively to check your progress.
 
-`r emo::ji("clapper")` Run the whole code chunk using the green arrow button on the right of the code chunk:
+🎬 Run the whole code chunk using the green arrow button on the right of the code chunk:
 ````
-```{r import}`r ''`
+```{r import}
 # Data import
 # the data are organised in to three
 # columns, one for each species. 
-seal <- read_table2("raw_data/seal.txt", header)
+seal &lt;- read_table2("raw_data/seal.txt", header)
 str(seal)
 ```
 ````
@@ -411,11 +394,11 @@ Individual lines of code can be run by placing your cursor on the line and doing
 
 We have a group in each column and need to reformat it as we did with the two populations of pigeons.
 
-`r emo::ji("clapper")` Insert a code chunk for tidying the data:
+🎬 Insert a code chunk for tidying the data:
 
 ````
-```{r tidy}`r ''`
-seal2 <- seal %>% 
+```{r tidy}
+seal2 &lt;- seal %&gt;% 
   pivot_longer(names_to = "species",
                values_to = "myoglobin",
                cols = everything())  
@@ -426,12 +409,12 @@ seal2 <- seal %>%
 ---
 # Add a code chunk
 
-`r emo::ji("clapper")` Insert a code chunk for summarising the data:
+🎬 Insert a code chunk for summarising the data:
 
 ````
-```{r summarise}`r ''`
-sealsummary <- seal2 %>% 
-  group_by(species) %>% 
+```{r summarise}
+sealsummary &lt;- seal2 %&gt;% 
+  group_by(species) %&gt;% 
   summarise(mean = mean(myoglobin),
             std = sd(myoglobin),
             n = length(myoglobin),
@@ -446,7 +429,7 @@ This time we save to output to `sealsumary`. We will use it in plotting
 
 To see what it is in an object you execute its name.
 
-`r emo::ji("clapper")` Select the word `sealsummary` and and run with Ctrl-enter
+🎬 Select the word `sealsummary` and and run with Ctrl-enter
 
 
 --
@@ -469,16 +452,16 @@ Inline code goes between ` `r` and ` ` ` .
 
 For example by writing: 
 
-> The squareroot of 2 is ` `r`  `sqrt(2)` ` ` ` 
+&gt; The squareroot of 2 is ` `r`  `sqrt(2)` ` ` ` 
 
 you will get 
 
-> The squareroot of 2 is  `r sqrt(2)`
+&gt; The squareroot of 2 is  1.4142136
 
 ---
 # Your turn
 
-`r emo::ji("clapper")` Add a sentence to your Methods section which uses inline code to report how many individuals were examined.
+🎬 Add a sentence to your Methods section which uses inline code to report how many individuals were examined.
 
 ---
 # Inline code
@@ -487,13 +470,13 @@ Suppose you want to report the highest mean in the text.
 
 We could add
 
-> The highest mean is ` `r`  `max(sealsummary$mean)` ` ` `
+&gt; The highest mean is ` `r`  `max(sealsummary$mean)` ` ` `
 
 to our text. 
 
 When we knit the document we would get
 
-> The highest mean is 48.91429
+&gt; The highest mean is 48.91429
 
 --
 
@@ -502,18 +485,18 @@ This needs rounding.
 # Inline code
 
 
-> The highest mean is ` `r`  `round(max(sealsummary$mean), 2)` ` ` `
+&gt; The highest mean is ` `r`  `round(max(sealsummary$mean), 2)` ` ` `
 
 
 The inline code is getting long. It is worse if you want to include 
 
-"The highest mean is 48.91 $\pm$ 1.61"
+"The highest mean is 48.91 `\(\pm\)` 1.61"
 
 --
 
 .font70[
 
-> The highest mean is ` `r`  `round(max(sealsummary$mean), 2)` ` ` ` $\pm$ ` `r`  `round(sealsummary$se[sealsummary$mean == max(sealsummary$mean)], 2)` ` ` `
+&gt; The highest mean is ` `r`  `round(max(sealsummary$mean), 2)` ` ` ` `\(\pm\)` ` `r`  `round(sealsummary$se[sealsummary$mean == max(sealsummary$mean)], 2)` ` ` `
 ]
 
 --
@@ -525,36 +508,36 @@ Rmd is supposed to be readable!
 
 To avoid long pieces of inline code, we instead we extract the values we want within a code chunk.
 
-`r emo::ji("clapper")` Insert a code chunk to extract values from the summary:
+🎬 Insert a code chunk to extract values from the summary:
 
 Don't worry too much about completely understanding the code
 .font80[
 
 ````
-```{r extract}`r ''`
+```{r extract}
 \# extract values for inline reporting
 
-highestmean <- max(sealsummary$mean)
-highestse <- sealsummary$se[sealsummary$mean == highestmean]
-highestspp <- sealsummary$species[sealsummary$mean == highestmean]
+highestmean &lt;- max(sealsummary$mean)
+highestse &lt;- sealsummary$se[sealsummary$mean == highestmean]
+highestspp &lt;- sealsummary$species[sealsummary$mean == highestmean]
 ```
 ````
 
 
 ]
-`r kableExtra::text_spec("Extra exercise:", background = "#25496b", color = "#fdf9f6", bold = TRUE)` Repeat for the lowest mean.
-<!-- lowestmean <- min(sealsummary$mean) -->
-<!-- lowestse <- sealsummary$se[sealsummary$mean == lowestmean] -->
-<!-- lowestspp <- sealsummary$species[sealsummary$mean == lowestmean] -->
+&lt;span style=" font-weight: bold;    color: #fdf9f6 !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #25496b !important;" &gt;Extra exercise:&lt;/span&gt; Repeat for the lowest mean.
+&lt;!-- lowestmean &lt;- min(sealsummary$mean) --&gt;
+&lt;!-- lowestse &lt;- sealsummary$se[sealsummary$mean == lowestmean] --&gt;
+&lt;!-- lowestspp &lt;- sealsummary$species[sealsummary$mean == lowestmean] --&gt;
 
 
 
 ---
 # Your turn.
 
-`r emo::ji("clapper")` Make a start on a results section by mixing text and inline coding. 
+🎬 Make a start on a results section by mixing text and inline coding. 
 
-`r emo::ji("clapper")` Knit your document. `r emo::ji("knit")`
+🎬 Knit your document. 🧶
 
 ---
 # Special characters
@@ -565,9 +548,9 @@ This has `$` signs codes that use backslashes and curly braces to indicate a spe
 
 --
 
-For example, to get $\bar{x} \pm s.e.$ you write `$\bar{x} \pm s.e.$`
+For example, to get `\(\bar{x} \pm s.e.\)` you write `$\bar{x} \pm s.e.$`
 
-`r emo::ji("clapper")` Improve your results section by using special characters.
+🎬 Improve your results section by using special characters.
 
 ---
 # Adding a table
@@ -580,10 +563,10 @@ For example, `digits` will round the number of decimal places used.
 
 --
 
-`r emo::ji("clapper")` Add a code chunk for a table of the summarised data:
+🎬 Add a code chunk for a table of the summarised data:
 
 ````
-```{r summary-table}`r ''`
+```{r summary-table}
 knitr::kable(sealsummary,
              digits = 2,
              caption = 'A summary of the data.',
@@ -594,7 +577,7 @@ knitr::kable(sealsummary,
 # Cross-reference the table.
 
 ````
-```{r summary-table}`r ''`
+```{r summary-table}
 knitr::kable(sealsummary,
              digits = 2,
              caption = 'A summary of the data.',
@@ -608,18 +591,18 @@ For automatic numbering and cross-references in text, you need to ensure two thi
 
 --
 
-`r emo::ji("exclamation_mark")` The caption does include "Table 1." 
+❗ The caption does include "Table 1." 
 
 ---
 # Cross-reference in text
 
 To refer to this table in the text, we use `\@ref(tab:summary-table)`
 
-`r emo::ji("clapper")` Add a sentence to your results referring to the reader to the summary table such as: See table \\@ref(tab:summary-table)
+🎬 Add a sentence to your results referring to the reader to the summary table such as: See table \\@ref(tab:summary-table)
 
 --
 
-`r emo::ji("clapper")` Hit knit! `r emo::ji("knit")`
+🎬 Hit knit! 🧶
 
 ---
 # Cross-reference in text
@@ -639,36 +622,36 @@ We will first build the ANOVA model and extract the results.
 
 --
 
-`r emo::ji("clapper")` Insert a code chunk and build the model:
+🎬 Insert a code chunk and build the model:
 
 ````
-```{r testing}`r ''`
-mod <- aov(data = seal2, myoglobin ~ species)
+```{r testing}
+mod &lt;- aov(data = seal2, myoglobin ~ species)
 ```
 ````
 
 ---
 # Statstical testing
 
-`r emo::ji("clapper")` A dataframe containing the ANOVA table can be obtained with:
+🎬 A dataframe containing the ANOVA table can be obtained with:
 
 ````
-res <- summary(mod)[[1]]
+res &lt;- summary(mod)[[1]]
 ````
 
 ---
 # Your turn
 
-`r emo::ji("clapper")` Extract the *F*, *d.f.* and *p* values from the dataframe and report them in the results section by mixing text and inline coding.
+🎬 Extract the *F*, *d.f.* and *p* values from the dataframe and report them in the results section by mixing text and inline coding.
 
 
 ---
 # Statstical testing: Tukey
 
-`r emo::ji("clapper")` Insert a code chunk an run a Tukey HSD on the model:
+🎬 Insert a code chunk an run a Tukey HSD on the model:
 
 ````
-```{r posthoc, include=FALSE}`r ''`
+```{r posthoc, include=FALSE}
 TukeyHSD(mod)
 ```
 ````
@@ -678,7 +661,7 @@ Note: I have added the `include=FALSE` argument to the chunk. This suppresses th
 ---
 # Statstical testing: Tukey
 
-`r emo::ji("clapper")` Run the Tukey code:
+🎬 Run the Tukey code:
 
 .font80[
 
@@ -704,11 +687,7 @@ It's the highest (Weddell) and lowest (Harbour) means that differ.
 .pull-left[
 This is what we are aiming for:
 
-```{r myo-fig, echo = FALSE, out.height="350px"}
-
-knitr::include_graphics("../pics/seals.png")
-
-```
+&lt;img src="../pics/seals.png" height="350px" /&gt;
 ]
 
 .pull-right[
@@ -725,11 +704,11 @@ To refer to this figure in the text, we use `\@ref(fig:myo-fig)`
 
 We will go through the items that need to be in the markdown with a basic plot.
 
-`r emo::ji("clapper")` Add a code chunk for the figure:
+🎬 Add a code chunk for the figure:
 .font80[
 
 ````
-```{r myo-fig, fig.cap="Mean Myoglobin content of skeletal muscle"}`r ''`
+```{r myo-fig, fig.cap="Mean Myoglobin content of skeletal muscle"}
 ggplot() +
   geom_point(data = seal2, aes(x = species, y = myoglobin),
              position = position_jitter(width = 0.1, height = 0))
@@ -745,12 +724,12 @@ I have labelled the chunk `myo-fig` and set the caption with `fig.cap`.
 ---
 # Cross reference a figure
 
-`r emo::ji("clapper")` Now add a sentence to your results such as: See Figure \\@ref(fig:myo-fig)
+🎬 Now add a sentence to your results such as: See Figure \\@ref(fig:myo-fig)
 
 
 --
 
-`r emo::ji("clapper")` Hit knit! `r emo::ji("knit")`
+🎬 Hit knit! 🧶
 
 You should find the figure and the cross reference to it are automatically numbered.
 
@@ -769,20 +748,20 @@ Including long text in the code chunk option makes the code a bit hard to read a
 We can instead create a 'reference' for the legend.
 
 
-`r emo::ji("clapper")`Add this text to your document:  
+🎬Add this text to your document:  
 
-  (ref:myo-fig) Mean Myoglobin content of skeletal muscle. Error bars are $\pm 1 s.e.$
+  (ref:myo-fig) Mean Myoglobin content of skeletal muscle. Error bars are `\(\pm 1 s.e.\)`
 
 
 ---
 # Adding a figure
 
-`r emo::ji("clapper")`And edit your chunk options like this: 
+🎬And edit your chunk options like this: 
 
 .font80[
 
 ````
-```{r myo-fig, fig.cap="(ref:myo-fig)"}`r ''`
+```{r myo-fig, fig.cap="(ref:myo-fig)"}
 ggplot() +
   geom_point(data = seal2, aes(x = species, y = myoglobin),
              position = position_jitter(width = 0.1, height = 0))
@@ -793,7 +772,7 @@ ggplot() +
 
 --
 
-`r emo::ji("clapper")` Hit knit! `r emo::ji("knit")`
+🎬 Hit knit! 🧶
 
 ---
 # Your turn
@@ -813,9 +792,9 @@ Suggestions:
 
 * RStudio’s guide http://rmarkdown.rstudio.com/index.html  
 
-* R Markdown: The Definitive Guide `r Cite(myBib, "markdown2")` https://bookdown.org/yihui/rmarkdown/   
+* R Markdown: The Definitive Guide &lt;a name=cite-markdown2&gt;&lt;/a&gt;([Xie Allaire, et al., 2018a](#bib-markdown2)) https://bookdown.org/yihui/rmarkdown/   
  
-* bookdown: Authoring Books and Technical Documents with R Markdown `r Cite(myBib, "bookdown")` https://bookdown.org/yihui/bookdown/  
+* bookdown: Authoring Books and Technical Documents with R Markdown ([Xie, 2016](#bib-bookdown)) https://bookdown.org/yihui/bookdown/  
 
 
 ---
@@ -838,18 +817,33 @@ Suggestions:
 
 class: inverse
 
-# `r emo::ji("party")` Congratulations! Keep practising! `r emo::ji("party")` 
+# 🎉 Congratulations! Keep practising! 🎈 
 
 .footnote[
-Slides made with with xaringan `r Cite(myBib, "xaringan")`
+Slides made with with xaringan ([Xie, 2019](#bib-xaringan))
 
 ]
 ---
 # References
 .font60[
-```{r refs, echo=FALSE, results="asis"}
-PrintBibliography(myBib)  
-```
+&lt;a name=bib-markdown1&gt;&lt;/a&gt;[Allaire, J, Y. Xie, et al.](#cite-markdown1)
+(2019a). _rmarkdown: Dynamic Documents for R_. R package version 1.16.
+URL:
+[https://github.com/rstudio/rmarkdown](https://github.com/rstudio/rmarkdown).
+
+&lt;a name=bib-bookdown&gt;&lt;/a&gt;[Xie, Y.](#cite-bookdown) (2016). _bookdown:
+Authoring Books and Technical Documents with R Markdown_. ISBN
+978-1138700109. Boca Raton, Florida: Chapman and Hall/CRC. URL:
+[https://github.com/rstudio/bookdown](https://github.com/rstudio/bookdown).
+
+&lt;a name=bib-xaringan&gt;&lt;/a&gt;[Xie, Y.](#cite-xaringan) (2019). _xaringan:
+Presentation Ninja_. R package version 0.12. URL:
+[https://CRAN.R-project.org/package=xaringan](https://CRAN.R-project.org/package=xaringan).
+
+&lt;a name=bib-markdown2&gt;&lt;/a&gt;[Xie, Y, J. Allaire, et al.](#cite-markdown2)
+(2018a). _R Markdown: The Definitive Guide_. ISBN 9781138359338. Boca
+Raton, Florida: Chapman and Hall/CRC. URL:
+[https://bookdown.org/yihui/rmarkdown](https://bookdown.org/yihui/rmarkdown).
 ]
 ---
 # Reproducibility in R
@@ -858,8 +852,128 @@ Emma Rand [emma.rand@york.ac.uk](mailto:emma.rand@york.ac.uk)
 Twitter: [@er13_r](https://twitter.com/er13_r)  
 GitHub: [3mmaRand](https://github.com/3mmaRand)  
 blog: https://buzzrbeeline.blog/  
-<br>
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Royal Society of Biology Online: An Introduction to Reproducible Analyses in R</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Emma Rand</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+&lt;br&gt;
+&lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;&lt;img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /&gt;&lt;/a&gt;&lt;br /&gt;&lt;span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"&gt;Royal Society of Biology Online: An Introduction to Reproducible Analyses in R&lt;/span&gt; by &lt;span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName"&gt;Emma Rand&lt;/span&gt; is licensed under a &lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License&lt;/a&gt;.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
 
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
 
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
