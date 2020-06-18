@@ -41,7 +41,7 @@ background-size: 200px
 
 Is an introduction to
 * R for those that have no experience
-* data import, tidying and/or presentation 
+* data import, tidying, analysis and  presentation 
 * some universal and highly transferable concepts 
 * the skills for organising reproducible analyses  
 
@@ -53,6 +53,9 @@ Is an introduction to
 
 It is not
 * An introduction to statistics  
+
+--
+
 * Magic  
 ]
 ---
@@ -62,7 +65,9 @@ Introduction
 * Rationale for scripting  
 * Why R?  
 * Organisation of data and analyses 
+
 --
+
 Introduction to R
 * Finding your way round RStudio  
 * Typing in data, doing some calculations on it, plotting it  
@@ -136,7 +141,7 @@ R was designed for data analysis and graphics
 
 ---
 background-image: url(../pics/welcome_to_rstats_twitter.png)
-background-position: 95% 60%
+background-position: 95% 70%
 background-size: 350px
 # Why R?
 
@@ -150,7 +155,9 @@ The R community is one of R's greatest assets, being vibrant, inclusive and supp
 [Hey! You there! You are welcome here](https://ropensci.org/blog/2017/06/23/community/)  
 
 .footnote[
+.font60[
 Artwork by @allison_horst "welcome to rstats on twitter"
+]
 ]
 
 
@@ -165,7 +172,9 @@ background-size: 400px
 R's "killer feature"  .......Super-charged reproducibility!
 
 .footnote[
+.font60[
 Artwork by @allison_horst "Be an Rmarkdown knitting wizard."
+]
 ]
 
 
@@ -249,7 +258,7 @@ There is an [RStudio cheatsheet](http://www-users.york.ac.uk/~er13/rstudio-ide.p
 * comments \#
 * data types and structures
 * functions `c()`, `class()` and `str()`
-* types of of R files: .R, .RData . RHistory
+* types of R files: .R, .RData .RHistory
 
 
 ---
@@ -257,16 +266,16 @@ There is an [RStudio cheatsheet](http://www-users.york.ac.uk/~er13/rstudio-ide.p
 
 .pull-left[
 Top left Panel
-* Script - Write, edit and save code and comments to keep  
+* Script - write and edit code and comments to keep  
  
 ---
 Bottom left Panel 
-* console - commands get executed here and can be typed here  
+* Console - where commands get executed and can be typed  
 ]
 
 .pull-right[
 Top right Panel
-* Environment - See your objects  
+* Environment - see your objects  
 * History - of commands  
 --- 
 Bottom right Panel
@@ -280,8 +289,8 @@ Bottom right Panel
 # RStudio: Recap
 Type of file
 * .R 
-  a script file: code (to save) and comments
-* .RData: a environment file also know as a workspace. Objects but no code
+  a script file: code and comments
+* .RData: a environment file also known as a workspace. Objects but no code
 * .RHistory: everything you typed, mostly wrong!
  
 Using a script 
@@ -358,7 +367,7 @@ We will work some data on the number of males in 64 bird nests with a clutch siz
 ]
 .pull-right[
 
-&lt;img src="02_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-3-1.png" width="288" /&gt;
+&lt;img src="01_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-3-1.png" width="288" /&gt;
 ]
 
 
@@ -661,7 +670,7 @@ ggplot(data = nest_data, aes(x = n, y = freq)) +
   geom_col()
 ```
 
-&lt;img src="02_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-16-1.png" width="288" /&gt;
+&lt;img src="01_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-16-1.png" width="288" /&gt;
 
 
 ---
@@ -745,7 +754,7 @@ ggplot(data = nest_data, aes(x = n, y = freq)) +
   geom_col(fill = "lightblue")
 ```
 .pull-left[
-&lt;img src="02_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-18-1.png" width="288" /&gt;
+&lt;img src="01_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-18-1.png" width="288" /&gt;
 ]
 --
 .pull-right[
@@ -769,7 +778,7 @@ ggplot(data = nest_data, aes(x = n, y = freq, fill = n)) +
   geom_col()
 ```
 .pull-left[
-&lt;img src="02_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-19-1.png" width="288" /&gt;
+&lt;img src="01_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-19-1.png" width="288" /&gt;
 ]
 --
 .pull-right[
@@ -782,7 +791,8 @@ Mapping fill to variable means the colour varies for each value of n.
 Can you use the manual to put the bars next to each other?
 
 .footnote[
-&lt;br&gt;&lt;span style=" font-weight: bold;    color: #f6fafd !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #25496b !important;" &gt;Extra exercise:&lt;/span&gt;  Change the colour of the lines around each bar to black.]
+&lt;br&gt;
+&lt;span style=" font-weight: bold;    color: #f6fafd !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #25496b !important;" &gt;Extra exercise:&lt;/span&gt;  Change the colour of the lines around each bar to black.]
 --
 
 
@@ -791,7 +801,7 @@ ggplot(data = nest_data, aes(x = n, y = freq)) +
   geom_col(fill = "lightblue", width = 1)
 ```
 
-&lt;img src="02_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-20-1.png" width="288" /&gt;
+&lt;img src="01_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-20-1.png" width="288" /&gt;
 
 
 ---
@@ -811,7 +821,7 @@ ggplot(data = nest_data,
 ]
 
 .pull-right[
-&lt;img src="02_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-21-1.png" width="288" /&gt;
+&lt;img src="01_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-21-1.png" width="288" /&gt;
 ]
 ---
 # Top Tip
@@ -854,7 +864,7 @@ ggplot(data = nest_data, aes(x = n, y = freq)) +
 * scale_y_continuous(expand = c(0, 0))
 ```
 
-&lt;img src="02_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-22-1.png" width="288" /&gt;
+&lt;img src="01_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-22-1.png" width="288" /&gt;
 
 .pull-right[
 .footnote[
@@ -876,7 +886,7 @@ ggplot(data = nest_data, aes(x = n, y = freq)) +
                      name = "Number of Nests") 
 ```
 
-&lt;img src="02_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-23-1.png" width="288" /&gt;
+&lt;img src="01_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-23-1.png" width="288" /&gt;
 
 ---
 
@@ -921,7 +931,7 @@ Summarise
 .pull-right[
 Plot
 
-&lt;img src="02_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-25-1.png" width="288" /&gt;
+&lt;img src="01_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-25-1.png" width="288" /&gt;
 ]
 ---
 background-image: url(../pics/interorbital.png)
@@ -1012,9 +1022,9 @@ Naming: human and machine readable
 
 ---
 # Working with Data 
-## Importing
+## Organising
 &lt;br&gt;
-Make a folder in your Project directory (this is also your working directory) called 'data'
+Make two folders in your Project directory (this is also your working directory) called 'data'
 
 The easiest way to do this is in RStudio  - see the bottom right Files panel
 
@@ -1022,6 +1032,9 @@ The easiest way to do this is in RStudio  - see the bottom right Files panel
 
 Save a copy of [pigeon.txt](../data/pigeon.txt) to the 'data' folder
 
+--
+
+Make a new script called 'analysis.R'
 
 ---
 # Working with Data 
@@ -1035,9 +1048,11 @@ to the file in the `read.table()` command:
 
 
 ```r
-pigeon &lt;- read.table("../data/pigeon.txt", 
+pigeon &lt;- read.table("data/pigeon.txt", 
                      header = TRUE)
 ```
+
+
 --
 
 The `data/` part is the 'relative path' to the file. 
@@ -1186,9 +1201,7 @@ This relies on the groups being in different columns!
 ## Tidy format
 
 
-Instead of having a population in each column, we often
-
-have, **and want**, all measurements in one column with a second column giving the group. 
+Instead of having a population in each column, we often have, **and want**, all measurements in one column with a second column giving the group. 
 
 --
 
@@ -1309,11 +1322,12 @@ TIDY!
 # Working with Data 
 We can make the data tidy with `pivot_longer()`&lt;sup&gt;1&lt;/sup&gt;.
 
-`pivot_longer()` collects the values from specified columns (`cols`) into a single column (`values_to`) and creates a column to indicate the group (`names_to`). 
-
 .footnote[
 [1] `pivot_longer()` is a function from a package called `tidyr` which is one of the `tidyverse` packages.
 ]
+--
+
+`pivot_longer()` collects the values from specified columns (`cols`) into a single column (`values_to`) and creates a column to indicate the group (`names_to`). 
 
 ---
 # Working with Data 
@@ -1333,6 +1347,9 @@ str(pigeon2)
 ##  $ distance  : num [1:80] 12.4 12.6 11.2 11.3 11.6 12.1 12.3 12.2 11.8 11.8 ...
 ```
 ]
+
+A 'tibble' `\(\approx\)` dataframe
+
 ---
 # Working with Data 
 
@@ -1360,17 +1377,16 @@ pigeon2 %&gt;%
 
 --
 
-
-
 This can be read as:
   - take pigeon2 *and then*  
   - group it by population *and then*  
   - summarise it by calculating the mean  
 
 i.e., the mean is done for each population.
+
 --
 
-the `mean` before the `=` is just a name.
+The `mean` before the `=` is just a name.
 
 ---
 # Working with Data 
@@ -1417,7 +1433,7 @@ The result:
 ## 2 B           11.7    40
 ```
 
-A 'tibble' `\(\approx\)` dataframe
+
 ---
 # Working with Data 
 
@@ -1452,7 +1468,7 @@ ggplot(data = pigeon2, aes(x = distance)) +
 ```
 .pull-left[
 
-&lt;img src="02_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-41-1.png" width="288" /&gt;
+&lt;img src="01_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-42-1.png" width="288" /&gt;
 ]
 
 --
@@ -1477,7 +1493,7 @@ To plot multiple group data in tidy form we map the population variable to the `
   scale_x_continuous(name = "Interorbital distance (mm)")
 ```
 
-&lt;img src="02_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-42-1.png" width="288" /&gt;
+&lt;img src="01_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-43-1.png" width="288" /&gt;
 .pull-right[
 .footnote[
 &lt;span style=" font-weight: bold;    color: #fdf9f6 !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #25496b !important;" &gt;Extra exercise:&lt;/span&gt;  Make the axes cross at (0,0)]
@@ -1502,12 +1518,12 @@ result on next slide.
 # Working with Data 
 The result:
 
-&lt;img src="02_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-43-1.png" width="288" /&gt;
+&lt;img src="01_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-44-1.png" width="288" /&gt;
 
 ---
 # Working with Data 
 
-`geom_density()` can also be used when `distance` is mapped to `x` and  `y` gives counts.
+`geom_density()` can also be used when `distance` is mapped to `x` and  `y` gives a measure of occurrence.
 
 
 ```r
@@ -1516,7 +1532,7 @@ ggplot(data = pigeon2, aes(x = distance, fill = population)) +
   scale_x_continuous(name = "Interorbital distance (mm)")
 ```
 
-&lt;img src="02_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-44-1.png" width="288" /&gt;
+&lt;img src="01_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-45-1.png" width="288" /&gt;
 
 ---
 # Working with Data 
@@ -1530,7 +1546,7 @@ ggplot(data = pigeon2, aes(x = distance, fill = population)) +
   scale_x_continuous(name = "Interorbital distance (mm)")
 ```
 
-&lt;img src="02_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-45-1.png" width="288" /&gt;
+&lt;img src="01_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-46-1.png" width="288" /&gt;
 
 ---
 # Working with Data 
@@ -1550,7 +1566,7 @@ ggplot(data = pigeon2, aes(x = distance, fill = population)) +
 * theme_classic()
 ```
 
-&lt;img src="02_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-46-1.png" width="288" /&gt;
+&lt;img src="01_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-47-1.png" width="288" /&gt;
 
 ---
 # Working with Data 
@@ -1558,7 +1574,7 @@ ggplot(data = pigeon2, aes(x = distance, fill = population)) +
 A different kind of plot:
 
 .pull-left[
-&lt;img src="02_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-47-1.png" width="288" /&gt;
+&lt;img src="01_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-48-1.png" width="288" /&gt;
 ]
 
 .pull-right[
@@ -1587,7 +1603,7 @@ ggplot(data = pigeon2, aes(x = population, y = distance)) +
 ---
 # Working with Data 
 
-&lt;img src="02_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-48-1.png" width="288" /&gt;
+&lt;img src="01_intro_to_r_and_working_with_data_files/figure-html/unnamed-chunk-49-1.png" width="288" /&gt;
 ---
 # Summary
 * Use a script and comment it  
@@ -1602,7 +1618,7 @@ ggplot(data = pigeon2, aes(x = population, y = distance)) +
 
 class: inverse
 
-# 🎉 Congratulations! Keep practising! 🎉 
+# 🥳 Congratulations! Keep practising! 🎉 
 
 .footnote[
 Slides made with with xaringan &lt;a name=cite-xaringan&gt;&lt;/a&gt;([Xie, 2019](#bib-xaringan))

@@ -87,7 +87,7 @@ Typically R, Rstudio and R packages are painless to install. However, if you enc
 
 ## Slides
 
-[Morning](https://3mmarand.github.io/rsb_online/slides/02_intro_to_r_and_working_with_data.html)
+[Morning](https://3mmarand.github.io/rsb_online/slides/01_intro_to_r_and_working_with_data.html)
 
 [Afternoon](https://3mmarand.github.io/rsb_online/slides/02_r_markdown_for_reproducible_reports.html)
 

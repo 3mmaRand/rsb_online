@@ -56,7 +56,7 @@ background-size: 200px
 
 Is an introduction to
 * R for those that have no experience
-* data import, tidying and/or presentation 
+* data import, tidying, analysis and  presentation 
 * some universal and highly transferable concepts 
 * the skills for organising reproducible analyses  
 
@@ -68,6 +68,9 @@ Is an introduction to
 
 It is not
 * An introduction to statistics  
+
+--
+
 * Magic  
 ]
 ---
@@ -77,7 +80,9 @@ Introduction
 * Rationale for scripting  
 * Why R?  
 * Organisation of data and analyses 
+
 --
+
 Introduction to R
 * Finding your way round RStudio  
 * Typing in data, doing some calculations on it, plotting it  
@@ -151,7 +156,7 @@ R was designed for data analysis and graphics
 
 ---
 background-image: url(../pics/welcome_to_rstats_twitter.png)
-background-position: 95% 60%
+background-position: 95% 70%
 background-size: 350px
 # Why R?
 
@@ -165,7 +170,9 @@ The R community is one of R's greatest assets, being vibrant, inclusive and supp
 [Hey! You there! You are welcome here](https://ropensci.org/blog/2017/06/23/community/)  
 
 .footnote[
+.font60[
 Artwork by @allison_horst "welcome to rstats on twitter"
+]
 ]
 
 
@@ -180,7 +187,9 @@ background-size: 400px
 R's "killer feature"  .......Super-charged reproducibility!
 
 .footnote[
+.font60[
 Artwork by @allison_horst "Be an Rmarkdown knitting wizard."
+]
 ]
 
 
@@ -266,7 +275,7 @@ There is an [RStudio cheatsheet](http://www-users.york.ac.uk/~er13/rstudio-ide.p
 * comments \#
 * data types and structures
 * functions `c()`, `class()` and `str()`
-* types of of R files: .R, .RData . RHistory
+* types of R files: .R, .RData .RHistory
 
 
 ---
@@ -274,16 +283,16 @@ There is an [RStudio cheatsheet](http://www-users.york.ac.uk/~er13/rstudio-ide.p
 
 .pull-left[
 Top left Panel
-* Script - Write, edit and save code and comments to keep  
+* Script - write and edit code and comments to keep  
  
 ---
 Bottom left Panel 
-* console - commands get executed here and can be typed here  
+* Console - where commands get executed and can be typed  
 ]
 
 .pull-right[
 Top right Panel
-* Environment - See your objects  
+* Environment - see your objects  
 * History - of commands  
 --- 
 Bottom right Panel
@@ -297,8 +306,8 @@ Bottom right Panel
 # RStudio: Recap
 Type of file
 * .R 
-  a script file: code (to save) and comments
-* .RData: a environment file also know as a workspace. Objects but no code
+  a script file: code and comments
+* .RData: a environment file also known as a workspace. Objects but no code
 * .RHistory: everything you typed, mostly wrong!
  
 Using a script 
@@ -719,7 +728,8 @@ Mapping fill to variable means the colour varies for each value of n.
 Can you use the manual to put the bars next to each other?
 
 .footnote[
-<br>`r text_spec("Extra exercise:", background = "#25496b", color = "#f6fafd", bold = TRUE)`  Change the colour of the lines around each bar to black.]
+<br>
+`r text_spec("Extra exercise:", background = "#25496b", color = "#f6fafd", bold = TRUE)`  Change the colour of the lines around each bar to black.]
 --
 
 ```{r fig.height=2.8}
@@ -944,9 +954,9 @@ Naming: human and machine readable
 
 ---
 # Working with Data 
-## Importing
+## Organising
 <br>
-Make a folder in your Project directory (this is also your working directory) called 'data'
+Make two folders in your Project directory (this is also your working directory) called 'data'
 
 The easiest way to do this is in RStudio  - see the bottom right Files panel
 
@@ -954,6 +964,9 @@ The easiest way to do this is in RStudio  - see the bottom right Files panel
 
 Save a copy of [pigeon.txt](../data/pigeon.txt) to the 'data' folder
 
+--
+
+Make a new script called 'analysis.R'
 
 ---
 # Working with Data 
@@ -965,7 +978,12 @@ To read the data in to R you need to use the 'relative path'
 to the file in the `read.table()` command:
 
 
-```{r}
+```{r eval=FALSE}
+pigeon <- read.table("data/pigeon.txt", 
+                     header = TRUE)
+```
+
+```{r echo=FALSE}
 pigeon <- read.table("../data/pigeon.txt", 
                      header = TRUE)
 ```
@@ -1093,9 +1111,7 @@ This relies on the groups being in different columns!
 ## Tidy format
 
 
-Instead of having a population in each column, we often
-
-have, **and want**, all measurements in one column with a second column giving the group. 
+Instead of having a population in each column, we often have, **and want**, all measurements in one column with a second column giving the group. 
 
 --
 
@@ -1177,11 +1193,12 @@ knitr::kable(head(pigeon2[c(1:3,41:43),]),
 # Working with Data 
 We can make the data tidy with `pivot_longer()`<sup>1</sup>.
 
-`pivot_longer()` collects the values from specified columns (`cols`) into a single column (`values_to`) and creates a column to indicate the group (`names_to`). 
-
 .footnote[
 [1] `pivot_longer()` is a function from a package called `tidyr` which is one of the `tidyverse` packages.
 ]
+--
+
+`pivot_longer()` collects the values from specified columns (`cols`) into a single column (`values_to`) and creates a column to indicate the group (`names_to`). 
 
 ---
 # Working with Data 
@@ -1195,6 +1212,9 @@ pigeon2 <- pivot_longer(data = pigeon,
 str(pigeon2)
 ```
 ]
+
+A 'tibble' $\approx$ dataframe
+
 ---
 # Working with Data 
 
@@ -1221,17 +1241,16 @@ pigeon2 %>%
 
 --
 
-
-
 This can be read as:
   - take pigeon2 *and then*  
   - group it by population *and then*  
   - summarise it by calculating the mean  
 
 i.e., the mean is done for each population.
+
 --
 
-the `mean` before the `=` is just a name.
+The `mean` before the `=` is just a name.
 
 ---
 # Working with Data 
@@ -1272,7 +1291,7 @@ pigeon2 %>%
             n = length(distance)) #<<
 ```
 
-A 'tibble' $\approx$ dataframe
+
 ---
 # Working with Data 
 
@@ -1354,7 +1373,7 @@ The result:
 ---
 # Working with Data 
 
-`geom_density()` can also be used when `distance` is mapped to `x` and  `y` gives counts.
+`geom_density()` can also be used when `distance` is mapped to `x` and  `y` gives a measure of occurrence.
 
 ```{r fig.height=3}
 ggplot(data = pigeon2, aes(x = distance, fill = population)) +
