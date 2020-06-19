@@ -1,4 +1,4 @@
-[![DOI](...)](...)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3901361.svg)](https://doi.org/10.5281/zenodo.3901361)
 
 # Introduction to Reproducible Analyses in R
 
@@ -96,7 +96,7 @@ Typically R, Rstudio and R packages are painless to install. However, if you enc
 
 Please cite as:
 
-.....
+Emma Rand. (2020, June 19). 3mmaRand/rsb_online: Royal Society of Biology Online: An Introduction to Reproducible Analyses in R (Version v1.0.0). Zenodo. http://doi.org/10.5281/zenodo.3901361
 
 You can obtain all the workshop materials by using the green 'Clone or download' button above.
 
