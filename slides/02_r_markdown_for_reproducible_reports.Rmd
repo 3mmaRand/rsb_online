@@ -54,11 +54,11 @@ class: inverse
 
 To introduce you to R Markdown for creating reproducible reports in a variety of output formats. Give you more practice organising analyses and working with data.
 
-The successful student will be able to:
+The successful participant will be able to:
 .font80[
 * explain what R Markdown is  
 * appreciate the role of the YAML header  
-* set default code chunk behaviour and those for individual chunks  
+* set default code chunk behaviour and that for individual chunks  
 * use headings, simple text formatting and special characters  
 * add citations and references with a .bib file  
 * use inline code to report results in text  
@@ -135,6 +135,7 @@ Many output formats are supported!
 ![picture of some of the formats](../pics/rmarkdownoutputformats.png)
 ]
 .pull-right[
+.font80[
 * Word
 * Webpages - many styles and themes
 * PDF
@@ -145,7 +146,7 @@ Many output formats are supported!
 * blogs
 * posters
 * web applications including interactive
-
+]
 ]
 
 ---
@@ -212,6 +213,10 @@ Your own R markdown file
 You could copy and paste a title from [paper.html](../seals/paper.html)
 
 ---
+class: inverse
+
+# References 
+---
 
 # YAML
 
@@ -273,6 +278,10 @@ library(tidyverse)
 * `packages` is just a name for the chunk. Naming chunks makes debugging easier.
 
 ]
+---
+class: inverse
+
+# References 
 
 ---
 # References
@@ -361,6 +370,10 @@ This should render as something like:
 We used R (R Core Team 2019) with tidyverse packages (Wickham 2017) for all analyses.
 
 ---
+class: inverse
+
+# Code chunks 
+---
 # Add a code chunk
 
 `r emo::ji("clapper")` Insert a code chunk for importing the data
@@ -387,7 +400,7 @@ You can run the code interactively to check your progress.
 # Data import
 # the data are organised in to three
 # columns, one for each species. 
-seal <- read_table2("raw_data/seal.txt", header)
+seal <- read.table("raw_data/seal.txt", header = TRUE)
 str(seal)
 ```
 ````
@@ -453,7 +466,10 @@ To see what it is in an object you execute its name.
 
 Knit your file
 
+---
+class: inverse
 
+# Inline code 
 ---
 # Inline code
 
@@ -479,6 +495,10 @@ you will get
 # Your turn
 
 `r emo::ji("clapper")` Add a sentence to your Methods section which uses inline code to report how many individuals were examined.
+
+--
+
+We measured the myoglobin content of the skeletal muscle of ` `r`  `sealsummary$n[1]` ` ` ` individuals in each of three species.
 
 ---
 # Inline code
@@ -523,7 +543,7 @@ Rmd is supposed to be readable!
 ---
 # Inline code - keep short
 
-To avoid long pieces of inline code, we instead we extract the values we want within a code chunk.
+To avoid long pieces of inline code, we instead extract the values we want within a code chunk.
 
 `r emo::ji("clapper")` Insert a code chunk to extract values from the summary:
 
@@ -557,17 +577,27 @@ highestspp <- sealsummary$species[sealsummary$mean == highestmean]
 `r emo::ji("clapper")` Knit your document. `r emo::ji("knit")`
 
 ---
+class: inverse
+
+# Special characters 
+
+---
 # Special characters
 
 You can include special characters in an R markdown document using LaTeX. 
 
-This has `$` signs codes that use backslashes and curly braces to indicate a special character or special formatting.
+This has `$` signs around codes that use backslashes and curly braces to indicate a special character or special formatting.
 
 --
 
 For example, to get $\bar{x} \pm s.e.$ you write `$\bar{x} \pm s.e.$`
 
 `r emo::ji("clapper")` Improve your results section by using special characters.
+
+---
+class: inverse
+
+# Numbered tables 
 
 ---
 # Adding a table
@@ -629,6 +659,11 @@ The general syntax for cross-references is `\@ref(label)` where label can be:
 `fig:name-of-chunk-that-makes-a-figure`
 
 ---
+class: inverse
+
+# Statistical testing with ANOVA and Tukey 
+
+---
 # Statstical testing
 
 An appropriate analysis for this scenario is a one-way ANOVA followed by a Tukey Honest Significant Difference post-hoc test. 
@@ -648,7 +683,7 @@ mod <- aov(data = seal2, myoglobin ~ species)
 ````
 
 ---
-# Statstical testing
+# Statstical testing: ANOVA
 
 `r emo::ji("clapper")` A dataframe containing the ANOVA table can be obtained with:
 
@@ -665,7 +700,7 @@ res <- summary(mod)[[1]]
 ---
 # Statstical testing: Tukey
 
-`r emo::ji("clapper")` Insert a code chunk an run a Tukey HSD on the model:
+`r emo::ji("clapper")` Insert a code chunk and run a Tukey HSD on the model:
 
 ````
 ```{r posthoc, include=FALSE}`r ''`
@@ -698,6 +733,10 @@ Weddell-Harbour      7.309643  2.176626 12.442660 0.0029812
 --
 It's the highest (Weddell) and lowest (Harbour) means that differ.
 
+---
+class: inverse
+
+# Numbered figures 
 
 ---
 # Adding a figure
@@ -803,7 +842,7 @@ Suggestions:
 * customise this figure (see the Seal example)  
 * add an additional figure  
 * add an image as a figure  
-* Try out a template from `rticles`: File | New File | R Markdown and choose Fr
+* Try out a template from `rticles`: File | New File | R Markdown and choose From Template
 
 
 ---
