@@ -82,7 +82,7 @@ If installing R and RStudio is tricky or impossible with your setup (e.g., if yo
 
 ## Issues 
 
-Typically R, Rstudio and R packages are painless to install. However, if you encounter problems there will be Zoom office hours on 26 June, 1500-1600 assist with set up.  The Zoom link will be sent to you in the morning on that day.
+Typically R, Rstudio and R packages are painless to install. However, if you encounter problems there will be Zoom office hours on 26 June, 1500-1600 assist with set up.  The Zoom link will be sent to you for this session.
 
 
 ## Slides
