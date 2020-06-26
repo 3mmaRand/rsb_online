@@ -45,6 +45,7 @@ You should have the following installed **prior** to attending the workshop:
 
 - R version 3.6 or higher
 - RStudio (1.2)
+- RTools
 - these packages: `tidyverse`, `janitor`, `rticles`, `bookdown`, `citr`
 
 ### Installing R
@@ -71,6 +72,10 @@ Downloads are available from https://www.rstudio.com/products/rstudio/download3/
 **For Windows with no admin rights**
 
 Download the `.zip` source archive under "Zip/Tarballs". Extract the files to a folder where you have write access, e.g. `C:\Users\username\RStudio`. In this folder, open the `bin` directory and find the RStudio program: it is named `rstudio.exe`, but the file extension will typically be hidden, so look for `rstudio`. Right-click this executable to create a desktop shortcut. Double-click the executable or use the shortcut to open.
+
+### R Tools
+
+Downloads are available from https://cran.r-project.org/bin/windows/Rtools/
 
 ### Installing packages
 
