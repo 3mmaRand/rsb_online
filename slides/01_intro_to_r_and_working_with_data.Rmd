@@ -516,7 +516,7 @@ total_males/total_nests
 ---
 # Why it works
 
-R works 'elementwise' unlike most programming lanaguges.  
+R works 'elementwise' unlike most programming languages.  
 ` n * freq`
 gives
 
