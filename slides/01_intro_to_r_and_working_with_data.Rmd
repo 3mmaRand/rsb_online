@@ -72,23 +72,28 @@ It is not
 --
 
 * Magic  
+
 ]
 ---
 # Programme overview: AM
 
-Introduction
+Introduction 
 * Rationale for scripting  
 * Why R?  
 * Organisation of data and analyses 
 
 --
 
-Introduction to R
+Introduction to R 
 * Finding your way round RStudio  
 * Typing in data, doing some calculations on it, plotting it  
 * Understanding the manual  
 * Importing data: working directories and paths  
 * Summarising and visualising data  
+
+--
+
+Lunch ~1230 - 1315
 
 ---
 # Programme overview: PM

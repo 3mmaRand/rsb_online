@@ -4,10 +4,12 @@
     <title>An Introduction to Reproducible Analyses in R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Emma Rand" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <script src="libs/kePrint/kePrint.js"></script>
-    <link rel="stylesheet" href="..\css_files\emma.css" type="text/css" />
-    <link rel="stylesheet" href="..\css_files\emma-fonts.css" type="text/css" />
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css_files/emma.css" type="text/css" />
+    <link rel="stylesheet" href="../css_files/emma-fonts.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -57,23 +59,28 @@ It is not
 --
 
 * Magic  
+
 ]
 ---
 # Programme overview: AM
 
-Introduction
+Introduction 
 * Rationale for scripting  
 * Why R?  
 * Organisation of data and analyses 
 
 --
 
-Introduction to R
+Introduction to R 
 * Finding your way round RStudio  
 * Typing in data, doing some calculations on it, plotting it  
 * Understanding the manual  
 * Importing data: working directories and paths  
 * Summarising and visualising data  
+
+--
+
+Lunch ~1230 - 1315
 
 ---
 # Programme overview: PM
@@ -902,8 +909,8 @@ Summarise
 &lt;table class="table" style="font-size: 16px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
 &lt;tr&gt;
-&lt;th style="border-bottom:hidden" colspan="2"&gt;&lt;/th&gt;
-&lt;th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt; Interorbital distance&lt;/div&gt;&lt;/th&gt;
+&lt;th style="empty-cells: hide;border-bottom:hidden;" colspan="2"&gt;&lt;/th&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt; Interorbital distance&lt;/div&gt;&lt;/th&gt;
 &lt;/tr&gt;
   &lt;tr&gt;
    &lt;th style="text-align:left;"&gt; Population &lt;/th&gt;
@@ -1618,7 +1625,7 @@ ggplot(data = pigeon2, aes(x = population, y = distance)) +
 
 class: inverse
 
-# 🥳 Congratulations! Keep practising! 🎉 
+# 🎉 Congratulations! Keep practising! 🎂 
 
 .footnote[
 Slides made with with xaringan &lt;a name=cite-xaringan&gt;&lt;/a&gt;([Xie, 2019](#bib-xaringan))
@@ -1633,9 +1640,9 @@ _Am. Stat._ 72.1, pp. 20-27.
 
 &lt;a name=bib-Codd1990-th&gt;&lt;/a&gt;[Codd, E. F.](#cite-Codd1990-th) (1990).
 _The Relational Model for Database Management: Version 2_. Boston, MA,
-USA: Addison-Wesley Longman Publishing Co, Inc.
+USA: Addison-Wesley Longman Publishing Co., Inc.
 
-&lt;a name=bib-Sandve2013-nd&gt;&lt;/a&gt;[Sandve, G. K, A. Nekrutenko, et
+&lt;a name=bib-Sandve2013-nd&gt;&lt;/a&gt;[Sandve, G. K., A. Nekrutenko, et
 al.](#cite-Sandve2013-nd) (2013). "Ten simple rules for reproducible
 computational research". En. In: _PLoS Comput. Biol._ 9.10, p.
 e1003285.
@@ -1649,15 +1656,15 @@ Elegant Graphics for Data Analysis_. Springer-Verlag New York. ISBN:
 978-3-319-24277-4. URL:
 [https://ggplot2.tidyverse.org](https://ggplot2.tidyverse.org).
 
-&lt;a name=bib-Wickham2019-ml&gt;&lt;/a&gt;[Wickham, H, M. Averick, et
+&lt;a name=bib-Wickham2019-ml&gt;&lt;/a&gt;[Wickham, H., M. Averick, et
 al.](#cite-Wickham2019-ml) (2019). "Welcome to the Tidyverse". In:
 _JOSS_ 4.43, p. 1686.
 
-&lt;a name=bib-Wilson2014-ij&gt;&lt;/a&gt;[Wilson, G, D. A. Aruliah, et
+&lt;a name=bib-Wilson2014-ij&gt;&lt;/a&gt;[Wilson, G., D. A. Aruliah, et
 al.](#cite-Wilson2014-ij) (2014). "Best practices for scientific
 computing". En. In: _PLoS Biol._ 12.1, p. e1001745.
 
-&lt;a name=bib-Wilson2017-cp&gt;&lt;/a&gt;[Wilson, G, J. Bryan, et
+&lt;a name=bib-Wilson2017-cp&gt;&lt;/a&gt;[Wilson, G., J. Bryan, et
 al.](#cite-Wilson2017-cp) (2017). "Good enough practices in scientific
 computing". En. In: _PLoS Comput. Biol._ 13.6, p. e1005510.
 
@@ -1674,6 +1681,11 @@ GitHub: [3mmaRand](https://github.com/3mmaRand)
 blog: https://buzzrbeeline.blog/  
 &lt;br&gt;
 &lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;&lt;img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /&gt;&lt;/a&gt;&lt;br /&gt;&lt;span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"&gt;Royal Society of Biology Online: An Introduction to Reproducible Analyses in R&lt;/span&gt; by &lt;span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName"&gt;Emma Rand&lt;/span&gt; is licensed under a &lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License&lt;/a&gt;.
+
+
+
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
