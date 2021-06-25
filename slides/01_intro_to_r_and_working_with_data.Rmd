@@ -17,10 +17,29 @@ output:
 knitr::opts_chunk$set(echo = TRUE, 
                       message = FALSE,	
                       warning = FALSE,
-                      fig.width=4, 
-                      fig.height=4, 
-                      fig.retina=3)
+                      fig.width = 4, 
+                      fig.height = 4, 
+                      fig.retina = 3)
 options(htmltools.dir.version = FALSE)
+```
+
+```{r xaringanextra, include=FALSE}
+# tile view
+xaringanExtra::use_tile_view()
+# share
+xaringanExtra::style_share_again(
+  share_buttons = "all")
+# broadcast: press P to enter the presenter view. Click on the Broadcast button to start broadcasting. Broadcast button will turn into a broadcast link. Share this link with your audience. When they open the link, their browser will connect with yours and from then on, whenever you advance or change slides, your viewer’s slides will move to the current slide.
+# Note that the broadcast link is unique and, as the presenter, is remembered for 4 hours. After 4 hours of inactivity, a new link will be generated..
+xaringanExtra::use_broadcast()
+# scribble, toggle S, note cannot advance sides
+xaringanExtra::use_scribble()
+# copy code
+xaringanExtra::use_clipboard()
+# highlighted code
+xaringanExtra::use_extra_styles(
+  hover_code_line = TRUE,         
+  mute_unhighlighted_code = TRUE)
 ```
 
 ```{r packages, include=FALSE}
@@ -39,7 +58,7 @@ BibOptions(check.entries = FALSE,
            dashed = FALSE,
            longnamesfirst = FALSE,
            max.names = 2)
-myBib <- ReadBib("../refs.bib", check = FALSE)
+myBib <- ReadBib("refs.bib", check = FALSE)
 ```
 
 class: inverse
@@ -68,12 +87,10 @@ Is an introduction to
 
 It is not
 * An introduction to statistics  
-
---
-
 * Magic  
 
 ]
+
 ---
 # Programme overview: AM
 
@@ -834,7 +851,7 @@ class: inverse
 .pull-left[
 Summarise
 ```{r echo=FALSE}
-pigeon <- read.table("../data/pigeon.txt", header = T)
+pigeon <- read.table("data/pigeon.txt", header = T)
 pigeon2 <- pivot_longer(data = pigeon,
                         cols = everything(), 
                         names_to = "population",
@@ -973,6 +990,17 @@ Save a copy of [pigeon.txt](../data/pigeon.txt) to the 'data' folder
 
 Make a new script called 'analysis.R'
 
+--
+
+Add this code:
+
+```{r eval=FALSE}
+# load packages
+library(tidyverse)
+```
+
+We need to load the `tidyverse` packages for several of commands we will use.
+
 ---
 # Working with Data 
 ## Importing
@@ -980,18 +1008,13 @@ Make a new script called 'analysis.R'
 
 To read the data in to R you need to use the 'relative path'
 
-to the file in the `read.table()` command:
+to the file in the `read_table2()` command:
 
 
-```{r eval=FALSE}
-pigeon <- read.table("data/pigeon.txt", 
-                     header = TRUE)
+```{r}
+pigeon <- read_table2("data/pigeon.txt")
 ```
 
-```{r echo=FALSE}
-pigeon <- read.table("../data/pigeon.txt", 
-                     header = TRUE)
-```
 --
 
 The `data/` part is the 'relative path' to the file. 
@@ -1053,18 +1076,13 @@ For example when `pigeon.txt` is in:
 
 ---
 # Working with Data 
-## Importing
 
-Look at the structure of the dataframe pigeon using `str()`
+Check all is well by looking at the structure of the dataframe pigeon using `str()`
 
 ```{r }
 str(pigeon)
 ```
---
 
-It's a dataframe with two variables (columns) called A and B
-
-The datatype of both variables is numeric.
 ---
 # Working with Data
 
@@ -1087,6 +1105,8 @@ So to output all of the values of one column we can use:
 pigeon$A
 ```
 ]
+
+
 ---
 # Working with Data
 
@@ -1161,7 +1181,7 @@ There may be more than one potential tidy structure.
 # Working with Data 
 
 ```{r echo=FALSE}
-pigeon <- read.table("../data/pigeon.txt", header = T)
+pigeon <- read_table("data/pigeon.txt")
 ```
 
 ## Tidy format
@@ -1331,14 +1351,14 @@ ggplot(data = pigeon2, aes(x = distance)) +
 
 `geom_histogram()` is the `geom` and `bins` gives the number of bars.
 
-This is whole data set, not separated by population!
+This is whole data set, not separated by `population`!
 
 ]
 
 ---
 # Working with Data 
 
-To plot multiple group data in tidy form we map the population variable to the `fill` aesthetic
+To plot multiple group data in tidy form we 'map' the `population` variable to the `fill` aesthetic
 
 ```{r fig.height=3}
 ggplot(data = pigeon2, aes(x = distance, fill = population)) + #<<

@@ -23,7 +23,7 @@ No previous coding experience will be assumed. Pre-course instructions for parti
 After this workshop the successful learner will be able to:
 
 -   Find their way around the RStudio windows
--   Create and plot data using the base package and ggplot
+-   Create and plot data using ggplot
 -   Explain the rationale for scripting analysis
 -   Use the help pages
 -   Know how to make additional packages available in an R session
