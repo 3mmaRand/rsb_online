@@ -18,12 +18,30 @@ output:
 knitr::opts_chunk$set(echo = TRUE, 
                       message = FALSE,	
                       warning = FALSE,
-                      fig.width=4, 
-                      fig.height=4, 
-                      fig.retina=3)
+                      fig.width = 4, 
+                      fig.height = 4, 
+                      fig.retina = 3)
 options(htmltools.dir.version = FALSE)
 ```
 
+```{r xaringanextra, include=FALSE}
+# tile view
+xaringanExtra::use_tile_view()
+# share
+xaringanExtra::style_share_again(
+  share_buttons = "all")
+# broadcast: press P to enter the presenter view. Click on the Broadcast button to start broadcasting. Broadcast button will turn into a broadcast link. Share this link with your audience. When they open the link, their browser will connect with yours and from then on, whenever you advance or change slides, your viewer’s slides will move to the current slide.
+# Note that the broadcast link is unique and, as the presenter, is remembered for 4 hours. After 4 hours of inactivity, a new link will be generated..
+xaringanExtra::use_broadcast()
+# scribble, toggle S, note cannot advance sides
+xaringanExtra::use_scribble()
+# copy code
+xaringanExtra::use_clipboard()
+# highlighted code
+xaringanExtra::use_extra_styles(
+  hover_code_line = TRUE,         
+  mute_unhighlighted_code = TRUE)
+```
 
 ```{r packages, include=FALSE}
 library(RefManageR)
@@ -42,7 +60,7 @@ BibOptions(check.entries = FALSE,
            dashed = FALSE,
            longnamesfirst = FALSE,
            max.names = 2)
-myBib <- ReadBib("../refs.bib", check = FALSE)
+myBib <- ReadBib("refs.bib", check = FALSE)
 ```
 
 class: inverse
@@ -745,7 +763,7 @@ This is what we are aiming for:
 
 ```{r myo-fig, echo = FALSE, out.height="350px"}
 
-knitr::include_graphics("../pics/seals.png")
+knitr::include_graphics("pics/seals.png")
 
 ```
 ]
