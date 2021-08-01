@@ -111,6 +111,6 @@ Typically R, Rstudio and R packages are painless to install. However, if you enc
 
 ## Please cite as
 
-Emma Rand. (2020, June 19). 3mmaRand/rsb_online: Royal Society of Biology Online: An Introduction to Reproducible Analyses in R (Version v1.0.0). Zenodo. <http://doi.org/10.5281/zenodo.3901361>
+Rand E. (2021). Introduction to Reproducible Analyses in R. A Royal Society of Biology online Continuing Professional Development course (version v1.0.2). DOI: https://doi.org/10.5281/zenodo.3901361 URL: https://github.com/3mmaRand/rsb_online
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Royal Society of Biology Online: An Introduction to Reproducible Analyses in R</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Emma Rand</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
