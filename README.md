@@ -2,7 +2,7 @@
 
 # Introduction to Reproducible Analyses in R
 
-A [Royal Society of Biology](https://www.rsb.org.uk/) online Continuing Professional Development course held 28 June 2021, 1000 - 1600
+A [Royal Society of Biology](https://www.rsb.org.uk/) online Continuing Professional Development course 1000 - 1600
 
 ## Overview
 
