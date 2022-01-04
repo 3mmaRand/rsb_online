@@ -36,7 +36,7 @@ After this workshop the successful learner will be able to:
 
 ## Pre-course instructions for participants
 
-The course will be delivered online using Zoom. The link will be sent to you by Friday 25 June. If you have not used zoom before, I recommend you download when prompted to do so when you join.
+The course will be delivered online using Zoom. If you have not used zoom before, I recommend you download when prompted to do so when you join.
 
 ### Computing requirements
 
@@ -44,7 +44,7 @@ If possible, use a large or two-screen set-up.
 
 You should have the following installed **prior** to attending the workshop:
 
--   R version 4.0.4 or higher
+-   R version 4.0 or higher
 -   RStudio (1.4)
 -   RTools (windows only)
 -   these packages: `tidyverse`, `janitor`, `bookdown`
@@ -54,12 +54,12 @@ You should have the following installed **prior** to attending the workshop:
 **For Windows**
 
 Go to <https://cloud.r-project.org/>
-Click "Download R for Windows", then "base", then "Download R 4.1.0 for Windows". This will download an `.exe` file. Click to start the installation.
+Click "Download R for Windows", then "base", then "Download R 4.x.x for Windows". This will download an `.exe` file. Click to start the installation.
 
 **For Mac**
 
 Go to <https://cloud.r-project.org/>
-Click "Download R for macOS", then "R-4.1.0.pkg" to download the installer. Run the installer to complete installation.
+Click "Download R for macOS", then "R-4.x.x.pkg" to download the installer. Run the installer to complete installation.
 
 
 ### Installing R Studio
@@ -68,7 +68,7 @@ Downloads are available from  <https://www.rstudio.com/products/rstudio/download
 
 **For Windows**
 
-Download "RStudio-1.4.1717.exe"
+Download "RStudio-1.4.xxx.exe"
 This will download an `.exe` file. Click to start the installation.
 
 **For Windows with no admin rights**
@@ -77,7 +77,7 @@ Download the `.zip` source archive under "Zip/Tarballs". Extract the files to a 
 
 **For Mac**
 
-Download "RStudio-1.4.1717.dmg"
+Download "RStudio-1.4.xxx.dmg"
 Click to start the installation.
 
 
