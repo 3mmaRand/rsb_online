@@ -35,7 +35,7 @@ knitr::include_graphics("pics/Baby_Weddell_Seal.jpg")
 ```{r import}
 # Data import
 # the data are organised in to three columns, one for each species. 
-seal <- read_table2("raw_data/seal.txt")
+seal <- read_table("raw_data/seal.txt")
 ```
 
 ```{r tidy}
