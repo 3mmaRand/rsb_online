@@ -267,6 +267,14 @@ background-size: 180px
   * Summarising and visualising with the [`tidyverse`](https://www.tidyverse.org/)  
 
 ---
+# Be excellent to each other!
+
+`r emo::ji("yellow_heart")` Please use the chat!
+
+`r emo::ji("purple_heart")` Be kind
+
+`r emo::ji("green_heart")` Be respectful
+---
 
 class: inverse
 
