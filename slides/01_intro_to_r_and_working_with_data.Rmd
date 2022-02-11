@@ -1008,11 +1008,11 @@ We need to load the `tidyverse` packages for several of commands we will use.
 
 To read the data in to R you need to use the 'relative path'
 
-to the file in the `read_table2()` command:
+to the file in the `read_table()` command:
 
 
 ```{r}
-pigeon <- read_table2("data/pigeon.txt")
+pigeon <- read_table("data/pigeon.txt")
 ```
 
 --

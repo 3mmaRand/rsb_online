@@ -16,7 +16,7 @@
     <script src="libs/fabric/fabric.min.js"></script>
     <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-scribble/scribble.js"></script>
-    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
     <script src="libs/clipboard/clipboard.min.js"></script>
     <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
@@ -218,10 +218,10 @@ Artwork by @allison_horst "Be an Rmarkdown knitting wizard."
 
 ## Further Reading
 
-* "Ten simple rules for reproducible computational research" &lt;a name=cite-Sandve2013-nd&gt;&lt;/a&gt;([Sandve Nekrutenko, et al., 2013](#bib-Sandve2013-nd))  
-* "Best practices for scientific computing" &lt;a name=cite-Wilson2014-ij&gt;&lt;/a&gt;([Wilson Aruliah, et al., 2014](#bib-Wilson2014-ij))  
-* "Good enough practices in scientific computing" &lt;a name=cite-Wilson2017-cp&gt;&lt;/a&gt;([Wilson Bryan, et al., 2017](#bib-Wilson2017-cp))  
-* "Excuse Me, Do You Have a Moment to Talk About Version Control?" &lt;a name=cite-Bryan2018-hl&gt;&lt;/a&gt;([Bryan, 2018](#bib-Bryan2018-hl))  
+* "Ten simple rules for reproducible computational research"   
+* "Best practices for scientific computing"   
+* "Good enough practices in scientific computing"   
+* "Excuse Me, Do You Have a Moment to Talk About Version Control?"   
 
 ---
 # Summary
@@ -615,7 +615,7 @@ Base packages (collections of commands) always come with R.
 
 --
 
-Other packages, such as `ggplot2` &lt;a name=cite-ggplot2&gt;&lt;/a&gt;([Wickham, 2016](#bib-ggplot2)) need to be added.
+Other packages, such as `ggplot2`  need to be added.
 
 `ggplot2` is one of the `tidyverse`  packages.
 
@@ -1078,12 +1078,12 @@ We need to load the `tidyverse` packages for several of commands we will use.
 
 To read the data in to R you need to use the 'relative path'
 
-to the file in the `read_table2()` command:
+to the file in the `read_table()` command:
 
 
 
 ```r
-pigeon &lt;- read_table2("data/pigeon.txt")
+pigeon &lt;- read_table("data/pigeon.txt")
 ```
 
 --
@@ -1156,7 +1156,7 @@ str(pigeon)
 ```
 
 ```
-## spec_tbl_df[,2] [40 x 2] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+## spec_tbl_df [40 x 2] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
 ##  $ A: num [1:40] 12.4 11.2 11.6 12.3 11.8 10.7 11.3 11.6 12.3 10.5 ...
 ##  $ B: num [1:40] 12.6 11.3 12.1 12.2 11.8 11.5 11.2 11.9 11.2 12.1 ...
 ##  - attr(*, "spec")=
@@ -1240,7 +1240,7 @@ Instead of having a population in each column, we often have, **and want**, all 
 
 --
 
-This format is described as 'tidy' &lt;a name=cite-Wickham2019-ml&gt;&lt;/a&gt;([Wickham Averick, et al., 2019](#bib-Wickham2019-ml)).
+This format is described as 'tidy' .
 
 
 --
@@ -1268,9 +1268,9 @@ Tidy data adhere to a consistent structure which makes it easier to manipulate, 
 
 ## What is tidy data?
 
-The term 'tidy data' was popularised by &lt;a name=cite-Wickham2014-nl&gt;&lt;/a&gt;[Wickham (2014)](#bib-Wickham2014-nl).
+The term 'tidy data' was popularised by .
 
-Closely allied to the relational algebra of relational databases &lt;a name=cite-Codd1990-th&gt;&lt;/a&gt;([Codd, 1990](#bib-Codd1990-th)). Underlies the enforced rectangular formatting in SPSS, STATA and R's dataframe.  
+Closely allied to the relational algebra of relational databases . Underlies the enforced rectangular formatting in SPSS, STATA and R's dataframe.  
 
 --
 
@@ -1291,18 +1291,22 @@ NOT TIDY!
 &lt;table class="table" style="font-size: 16px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
-   &lt;th style="text-align:right;"&gt; A B &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; A &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; B &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 12.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.6 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 11.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11.3 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 11.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.1 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1321,28 +1325,28 @@ TIDY!
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; A B &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 12.4 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; A B &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 11.2 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; A B &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 11.6 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.6 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11.3 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.1 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1373,9 +1377,9 @@ str(pigeon2)
 ```
 
 ```
-## tibble[,2] [40 x 2] (S3: tbl_df/tbl/data.frame)
-##  $ population: chr [1:40] "A B" "A B" "A B" "A B" ...
-##  $ distance  : num [1:40] 12.4 11.2 11.6 12.3 11.8 10.7 11.3 11.6 12.3 10.5 ...
+## tibble [80 x 2] (S3: tbl_df/tbl/data.frame)
+##  $ population: chr [1:80] "A" "B" "A" "B" ...
+##  $ distance  : num [1:80] 12.4 12.6 11.2 11.3 11.6 12.1 12.3 12.2 11.8 11.8 ...
 ```
 ]
 
@@ -1425,10 +1429,11 @@ The result:
 
 
 ```
-## # A tibble: 1 x 2
+## # A tibble: 2 x 2
 ##   population  mean
 ##   &lt;chr&gt;      &lt;dbl&gt;
-## 1 A B         11.2
+## 1 A           11.2
+## 2 B           11.7
 ```
 ---
 # Working with Data 
@@ -1456,10 +1461,11 @@ The result:
 
 
 ```
-## # A tibble: 1 x 3
+## # A tibble: 2 x 3
 ##   population  mean     n
 ##   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;
-## 1 A B         11.2    40
+## 1 A           11.2    40
+## 2 B           11.7    40
 ```
 
 
@@ -1477,10 +1483,11 @@ pigeon2 %&gt;%
 ```
 
 ```
-## # A tibble: 1 x 5
-##   population  mean     n    sd    se
-##   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-## 1 A B         11.2    40 0.740 0.117
+## # A tibble: 2 x 5
+##   population  mean     n    sd     se
+##   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt;
+## 1 A           11.2    40 0.740 0.117 
+## 2 B           11.7    40 0.573 0.0906
 ```
 
 ---
@@ -1646,52 +1653,16 @@ ggplot(data = pigeon2, aes(x = population, y = distance)) +
 
 class: inverse
 
-# 🎈 Congratulations! Keep practising! 🎈 
+# 🎉 Congratulations! Keep practising! 🥳 
 
 .footnote[
-Slides made with with xaringan &lt;a name=cite-xaringan&gt;&lt;/a&gt;([Xie, 2019](#bib-xaringan))
+Slides made with with xaringan 
 
 ]
 ---
 # References
 .font60[
-&lt;a name=bib-Bryan2018-hl&gt;&lt;/a&gt;[Bryan, J.](#cite-Bryan2018-hl) (2018).
-"Excuse Me, Do You Have a Moment to Talk About Version Control?" In:
-_Am. Stat._ 72.1, pp. 20-27.
-
-&lt;a name=bib-Codd1990-th&gt;&lt;/a&gt;[Codd, E. F.](#cite-Codd1990-th) (1990).
-_The Relational Model for Database Management: Version 2_. Boston, MA,
-USA: Addison-Wesley Longman Publishing Co., Inc.
-
-&lt;a name=bib-Sandve2013-nd&gt;&lt;/a&gt;[Sandve, G. K., A. Nekrutenko, et
-al.](#cite-Sandve2013-nd) (2013). "Ten simple rules for reproducible
-computational research". En. In: _PLoS Comput. Biol._ 9.10, p.
-e1003285.
-
-&lt;a name=bib-Wickham2014-nl&gt;&lt;/a&gt;[Wickham, H.](#cite-Wickham2014-nl)
-(2014). "Tidy Data". In: _Journal of Statistical Software, Articles_
-59.10, pp. 1-23.
-
-&lt;a name=bib-ggplot2&gt;&lt;/a&gt;[Wickham, H.](#cite-ggplot2) (2016). _ggplot2:
-Elegant Graphics for Data Analysis_. Springer-Verlag New York. ISBN:
-978-3-319-24277-4. URL:
-[https://ggplot2.tidyverse.org](https://ggplot2.tidyverse.org).
-
-&lt;a name=bib-Wickham2019-ml&gt;&lt;/a&gt;[Wickham, H., M. Averick, et
-al.](#cite-Wickham2019-ml) (2019). "Welcome to the Tidyverse". In:
-_JOSS_ 4.43, p. 1686.
-
-&lt;a name=bib-Wilson2014-ij&gt;&lt;/a&gt;[Wilson, G., D. A. Aruliah, et
-al.](#cite-Wilson2014-ij) (2014). "Best practices for scientific
-computing". En. In: _PLoS Biol._ 12.1, p. e1001745.
-
-&lt;a name=bib-Wilson2017-cp&gt;&lt;/a&gt;[Wilson, G., J. Bryan, et
-al.](#cite-Wilson2017-cp) (2017). "Good enough practices in scientific
-computing". En. In: _PLoS Comput. Biol._ 13.6, p. e1005510.
-
-&lt;a name=bib-xaringan&gt;&lt;/a&gt;[Xie, Y.](#cite-xaringan) (2019). _xaringan:
-Presentation Ninja_. R package version 0.12. URL:
-[https://CRAN.R-project.org/package=xaringan](https://CRAN.R-project.org/package=xaringan).
+NULL
 ]
 ---
 # Reproducibility in R
